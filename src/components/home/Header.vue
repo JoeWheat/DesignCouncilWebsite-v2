@@ -7,10 +7,9 @@
           <h2 class="text-secondary">International School Basel</h2>
           <h1>{{ data.name }}</h1>
           <p class="lead">
-            Creating websites, applications and solutions for the International
-            School Basel community, founded in 2019
+            {{ data.header.description }}
           </p>
-          <input v-model="color" type="color" @input="color" />
+          <input v-model="color" type="color" />
         </div>
       </div>
     </div>
@@ -25,7 +24,7 @@ export default {
       return this.$store.state.data;
     },
   },
-  methods: {
+  watch: {
     color() {
       document.documentElement.style.setProperty("--red-dc", this.color);
     },

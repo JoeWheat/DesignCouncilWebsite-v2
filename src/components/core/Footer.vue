@@ -5,7 +5,8 @@
         <div class="col-8">
           <p class="rights">
             <span>© {{ new Date().getFullYear() }}.&nbsp;</span
-            ><span>ISB Design Council</span><span>. All rights reserved</span>
+            ><span>ISB {{ data.name }}</span
+            ><span>. All rights reserved</span>
           </p>
         </div>
         <div class="col-4 text-right">
@@ -31,6 +32,11 @@
 
 <script>
 export default {
+  computed: {
+    data() {
+      return this.$store.state.data;
+    },
+  },
   data() {
     return {
       social: [

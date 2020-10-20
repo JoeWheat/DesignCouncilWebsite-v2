@@ -5,7 +5,7 @@
         <div class="row no-gutters">
           <div class="col-md-4 col-6">
             <router-link to="/" class="nav-logo"
-              ><h4>Design Council</h4></router-link
+              ><h4>{{ data.name }}</h4></router-link
             >
           </div>
           <div class="col d-md-block d-none text-right">
@@ -68,6 +68,11 @@
 
 <script>
 export default {
+  computed: {
+    data() {
+      return this.$store.state.data;
+    },
+  },
   watch: {
     $route() {
       this.toggled = false;
