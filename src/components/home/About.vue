@@ -10,22 +10,20 @@
         />
       </div>
       <div class="col-md-6 mt-4 pt-md-5">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
-        consectetur tellus vel risus feugiat volutpat. Nulla vulputate erat non
-        tempor finibus. In euismod augue ac finibus elementum. In venenatis nec
-        nulla sed convallis. Suspendisse sollicitudin imperdiet sapien, sit amet
-        tempor eros imperdiet id. Aliquam et scelerisque purus.<br /><br />
-        Vivamus pulvinar convallis ligula sed condimentum. Curabitur a venenatis
-        augue. Nulla blandit sem vel sem euismod, id interdum nisi cursus.
-        Maecenas ac dui lorem. Duis eu fermentum diam, quis ullamcorper risus.
-        Suspendisse eleifend ex augue, gravida congue est elementum ut.
+        {{ data.about.text }}
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    data() {
+      return this.$store.state.data;
+    },
+  },
+};
 </script>
 
 <style>

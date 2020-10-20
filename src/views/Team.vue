@@ -12,7 +12,7 @@
     </div>
     <div class="row">
       <div
-        v-for="(person, ind) in team"
+        v-for="(person, ind) in data.team.people"
         :key="person.name"
         class="col-md-10 mx-auto box mb-4"
       >
@@ -45,25 +45,10 @@
 
 <script>
 export default {
-  data() {
-    return {
-      team: [
-        {
-          name: "Daniel Wilson",
-          role: "Software/web development",
-          image: require("../assets/images/team/dan.png"),
-          message:
-            "Hi, I’m Daniel, I’m a 15 year old developer, computer science is my passion and I love being able to solve problems with programming. I also play tennis and the odd game of Tetris. You can contact me any time with questions related to the website with my email below 🙂",
-        },
-        {
-          name: "Daniel Wilson",
-          role: "Software/web development",
-          image: require("../assets/images/team/dan.png"),
-          message:
-            "Hi, I’m Daniel, I’m a 15 year old developer, computer science is my passion and I love being able to solve problems with programming. I also play tennis and the odd game of Tetris. You can contact me any time with questions related to the website with my email below 🙂",
-        },
-      ],
-    };
+  computed: {
+    data() {
+      return this.$store.state.data;
+    },
   },
 };
 </script>

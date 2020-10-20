@@ -9,7 +9,7 @@
           <p class="lead">
             {{ data.header.description }}
           </p>
-          <input v-model="color" type="color" />
+          <input class="mt-2" v-model="color" type="color" />
         </div>
       </div>
     </div>
